@@ -1,0 +1,44 @@
+# nomor 1
+data_bintang = read.delim("clipboard")
+View(data_bintang)
+
+# nomor 2
+bintang <- data_bintang[data_bintang$Bedrooms==2,]
+View(bintang)
+
+# nomor 3
+bintang$Bathrooms <- ifelse(bintang$Bathrooms > 2, c("large"),c("small"))
+View(bintang)
+
+# nomor 4
+bintang$dataku1 <- ifelse(bintang$Offers > 2,c("large"),c("small"))
+View(bintang)
+
+# nomor 5
+bintang$dataku1 <- bintang$Price/bintang$SqFt
+View(bintang)
+
+# nomor 6
+bintang$dataku1 <- NULL
+
+# nomor 7
+data_bintang.kolom1dan2 <- data_bintang[,1:2]
+View(data_bintang.kolom1dan2)
+
+# nomor 8
+data_bintang.kolom3dan4 <- data_bintang[,3:4]
+View(data_bintang.kolom3dan4)
+
+# nomor 9
+data_bintang.kolom1sd4 <- cbind(data_bintang.kolom1dan2,data_bintang.kolom3dan4)
+View(data_bintang.kolom1sd4)
+
+# nomor 10
+data_bintang.kolom1sd3 <- data_bintang[1:3]
+data_bintang.kolom4sd6 <- data_bintang[4:6]
+data_bintang.kolom1sd6 <- cbind(data_bintang.kolom1sd3,data_bintang.kolom4sd6)
+View(data_bintang.kolom1sd6)
+
+# nomor 11
+data_bintang.sort <- data_bintang[order(data_bintang$Price),]
+View(data_bintang.sort)
